@@ -14,13 +14,13 @@ filtered_df$Sub_metering_2<-as.numeric(filtered_df$Sub_metering_2)
 png(filename="plot3.png", height=480, width=480)
 
 #Make a line plot for Sub metering 1
-with(filtered_df, plot(Sub_metering_1, 
+with(filtered_df, plot(x=datetime, y=Sub_metering_1, 
                        type="l",
                        col="black",
                        ylab="Energy Sub metering"))
 #Add sub metering 2 and sub metering 3
-lines(filtered_df$Sub_metering_2, col="red")
-lines(filtered_df$Sub_metering_3, col="blue")
+lines(x=filtered_df$datetime, y=filtered_df$Sub_metering_2, col="red")
+lines(x=filtered_df$datetime, y=filtered_df$Sub_metering_3, col="blue")
 
 #Make a legend
 legend("topright",lty=1, col=c("black","red", "blue"), 

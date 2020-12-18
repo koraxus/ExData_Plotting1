@@ -12,8 +12,9 @@ filtered_df$Global_active_power<-as.numeric(filtered_df$Global_active_power)
 #Open the png graphics device
 png(filename="plot2.png", height=480, width=480)
 
+
 #Make a line plot of Global Active Power
-with(filtered_df, plot(Global_active_power, 
+with(filtered_df, plot(x=datetime, y=Global_active_power, 
                        type="l",
                        ylab="Global Active Power (Kilowatts)"))
 

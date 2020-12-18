@@ -21,22 +21,22 @@ par(mfrow=c(2,2))
 #Write the plots
 with(filtered_df, {
   #Line plot of the Global Active Power
-  plot(Global_active_power, 
+  plot(x=datetime, y=Global_active_power, 
        type="l",
        ylab="Global Active Power (Kilowatts)")
   #Voltage Line plot
-  plot(Voltage, type="l", ylab="Voltage", xlab="datetime")
+  plot(x=datetime, y=Voltage, type="l", ylab="Voltage", xlab="datetime")
   #Submetering plots with legend
-  plot(Sub_metering_1, 
+  plot(x=datetime, y=Sub_metering_1, 
        type="l",
        col="black",
        ylab="Energy Sub metering")
-  lines(filtered_df$Sub_metering_2, col="red")
-  lines(filtered_df$Sub_metering_3, col="blue")
+  lines(x=datetime, y=filtered_df$Sub_metering_2, col="red")
+  lines(x=datetime, y=filtered_df$Sub_metering_3, col="blue")
   legend("topright",lty=1, col=c("black","red", "blue"), 
        legend=c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
   #Global reactive power with label
-  plot(Global_reactive_power, type="l", xlab="datetime")
+  plot(x=datetime, y=Global_reactive_power, type="l", xlab="datetime")
 })
 
 #Close the graphics device
