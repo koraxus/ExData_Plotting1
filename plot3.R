@@ -17,6 +17,7 @@ png(filename="plot3.png", height=480, width=480)
 with(filtered_df, plot(x=datetime, y=Sub_metering_1, 
                        type="l",
                        col="black",
+                       xlab='',
                        ylab="Energy Sub metering"))
 #Add sub metering 2 and sub metering 3
 lines(x=filtered_df$datetime, y=filtered_df$Sub_metering_2, col="red")

@@ -23,6 +23,7 @@ with(filtered_df, {
   #Line plot of the Global Active Power
   plot(x=datetime, y=Global_active_power, 
        type="l",
+       xlab='',
        ylab="Global Active Power (Kilowatts)")
   #Voltage Line plot
   plot(x=datetime, y=Voltage, type="l", ylab="Voltage", xlab="datetime")
@@ -30,6 +31,7 @@ with(filtered_df, {
   plot(x=datetime, y=Sub_metering_1, 
        type="l",
        col="black",
+       xlab='',
        ylab="Energy Sub metering")
   lines(x=datetime, y=filtered_df$Sub_metering_2, col="red")
   lines(x=datetime, y=filtered_df$Sub_metering_3, col="blue")

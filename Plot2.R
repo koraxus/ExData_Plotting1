@@ -15,6 +15,7 @@ png(filename="plot2.png", height=480, width=480)
 #Make a line plot of Global Active Power
 with(filtered_df, plot(x=datetime, y=Global_active_power, 
                        type="l",
+                       xlab='',
                        ylab="Global Active Power (Kilowatts)"))
 
 #Close the graphics device
