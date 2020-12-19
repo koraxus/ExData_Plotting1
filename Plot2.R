@@ -4,8 +4,7 @@ library(lubridate)
 #Read and filter the data by dates of interest
 df<-read.table("./household_power_consumption.txt",header=TRUE, sep=";",stringsAsFactors = FALSE)
 df<-mutate(df, datetime=dmy(df$Date) + hms(df$Time))
-filtered_df<-filter(df, datetime >= "2007-02-01 00:00:00" & datetime < "2007-02-03 0:00:00")
-
+filtered_df<-df[which(df$Date == "1/2/2007" | df$Date == "2/2/2007"),]
 # Convert Global active power to a number
 filtered_df$Global_active_power<-as.numeric(filtered_df$Global_active_power)
 
